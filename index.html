@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Build a practical celebration plan around your event, guest count, budget, date, and location."
+    />
+    <title>Celebration AI Planner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-container">
+      <header class="header">
+        <p class="eyebrow">YOUR DAY, THOUGHTFULLY PLANNED</p>
+        <h1>Celebration planner</h1>
+        <p class="subtitle">
+          A practical starting plan for birthdays, weddings, and events—built
+          around your budget and guest list.
+        </p>
+      </header>
+
+      <section class="card" aria-labelledby="form-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">START WITH THE DETAILS</p>
+            <h2 id="form-heading">Plan your event</h2>
+          </div>
+          <span class="step-badge">01 / 01</span>
+        </div>
+
+        <form id="planner-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="type">Event type</label>
+              <select id="type" name="type">
+                <option>Birthday</option>
+                <option>Wedding</option>
+                <option>Community Fest</option>
+                <option>Corporate Party</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="theme">Theme</label>
+              <select id="theme" name="theme">
+                <option>Neon party</option>
+                <option>Royal party</option>
+                <option>Boho chic</option>
+                <option>Bengali traditional</option>
+                <option>Minimalist</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Total budget <span>(₹)</span></label>
+              <input
+                id="budget"
+                name="budget"
+                type="number"
+                min="1"
+                step="1000"
+                placeholder="e.g. 50,000"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="guests">Number of guests</label>
+              <input
+                id="guests"
+                name="guests"
+                type="number"
+                min="1"
+                step="1"
+                placeholder="e.g. 50"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="date">Event date</label>
+              <input id="date" name="date" type="date" required />
+            </div>
+            <div class="form-group">
+              <label for="loc">City or location</label>
+              <input
+                id="loc"
+                name="location"
+                type="text"
+                maxlength="100"
+                placeholder="e.g. Kolkata"
+                required
+              />
+            </div>
+          </div>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <button id="generatebutton" class="generate-btn" type="submit">
+            <span class="button-icon" aria-hidden="true">✦</span>
+            Generate my plan
+          </button>
+          <p class="form-note">
+            Estimates are planning guides, not live vendor quotes.
+          </p>
+        </form>
+      </section>
+
+      <section id="output" class="output-box" aria-live="polite"></section>
+      <footer class="footer">A good celebration starts with a clear plan.</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
